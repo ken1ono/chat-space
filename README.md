@@ -1,6 +1,6 @@
 # README
 
-##usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -12,7 +12,7 @@
 - has_many :members
 
 
-##membersテーブル
+## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -23,7 +23,7 @@
 - belongs_to :user
 
 
-##groupsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
@@ -34,7 +34,7 @@
 - has many :messages
 
 
-##messagesテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |message_id|integer|null: false, foreign_key: true|
