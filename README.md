@@ -1,6 +1,7 @@
-# README
+# DB設計
 
 ## usersテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -13,6 +14,7 @@
 
 
 ## membersテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -24,6 +26,7 @@
 
 
 ## groupsテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
@@ -35,6 +38,7 @@
 
 
 ## messagesテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |message_id|integer|null: false, foreign_key: true|
