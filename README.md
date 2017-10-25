@@ -10,6 +10,8 @@
 
 ### Association
 - has_many :members
+- has_many :groups
+- has_many :messages
 
 ## membersテーブル
 
