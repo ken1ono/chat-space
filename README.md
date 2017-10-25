@@ -43,3 +43,5 @@
 
 ### Association
 - belongs_to :group
+
+
