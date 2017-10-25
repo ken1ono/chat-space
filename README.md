@@ -4,13 +4,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_name|text|null: false|
+|name|text|null: false|
 |email|text|null: false, unique: true|
-|email_password|text|null: false|
+|password|text|null: false|
 
 ### Association
 - has_many :members
-- has_many :groups
+- has_many :groups, through: :members
 - has_many :messages
 
 ## membersテーブル
@@ -28,10 +28,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|text|null: false|
+|name|text|null: false|
 
 ### Association
 - has many :members
+- has many :users, through: :members
 - has many :messages
 
 ## messagesテーブル
