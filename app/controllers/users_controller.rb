@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    user = User.all
+    users = Users.all
   end
 end
