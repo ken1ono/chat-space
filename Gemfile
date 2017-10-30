@@ -56,6 +56,7 @@ gem 'haml-rails'
 gem 'compass-rails'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'pry-rails'
 
 group :development do
   gem 'erb2haml'
