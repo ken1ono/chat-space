@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-
-
   def edit
     users = User.find(params[:id])
   end
@@ -15,5 +13,4 @@ class UsersController < ApplicationController
     def users_params
     params.require(:user).permit(:name, :email).merge(id: params[:id])
     end
-
 end
