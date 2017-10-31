@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def update
     if  current_user.update(users_params) then
-      render "messages/index"
+      redirect_to controller: :messages, action: :index
     else
       render :edit
     end
