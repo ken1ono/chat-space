@@ -1,0 +1,8 @@
+- if @group.errors.any?
+  %div{id: "error_explanation"}
+    - @group.errors.full_messages.each do |msg|
+      %h2
+        1件のエラーが発生しました。
+      %ul
+        グループ名を入力してください。
+
