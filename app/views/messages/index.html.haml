@@ -1,3 +1,33 @@
 %body
-  =render partial: "messages/chatside"
-
+  =render partial: "groups/chatside"
+  .chat-main
+    .chat-main__header
+      .chat-main__header--group.clearfix
+        .chat-main__header--group-name
+          = @groups.name
+        .chat-main__header--group-edit-btn
+          = link_to "Edit", "/groups/@group.id/edit"
+      .chat-main__header-members
+        MEMBER:
+        %i
+          = current_user.name
+    .chat-main__body
+      .chat-main__body--messages-list
+        .chat-main__message.clearfix{"data-id": "987"}
+          .chat-main__message-name
+            ke
+          .chat-main__message-time
+          .chat-main__message-body
+            コメント1
+            %img.chat-main__message-body-image{src: ""}/
+    = form_for [@groups, @messages] do |f|
+      .chat-main__footer
+        .chat-main__footer-form
+          .chat-main__footer-body
+            .message
+              = f.text_field :body, placeholder: "type a message"
+            .chat-file
+              =f.file_field :image, class: "chat-file"
+              %input#message_image.image{name: "message[image]", type: "file"}
+              %i.fa.fa-image.fa-lg
+          %input.submit{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
