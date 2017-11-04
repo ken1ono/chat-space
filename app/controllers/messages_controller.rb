@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
   def index
-    @groups = Group.find(1)
+    @group = Group.find(1)
     @messages = Message.new
   end
 
@@ -9,8 +9,8 @@ class MessagesController < ApplicationController
     @message = Message.new(messages_params)
   end
 
-  private
-    def messages_params
-    params.require(:message).permit(:message)
+    private
+      def messages_params
+      params.require(:message).permit(:message)
     end
 end

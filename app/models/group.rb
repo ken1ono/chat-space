@@ -3,5 +3,5 @@ class Group < ApplicationRecord
 
   has_many :members
   has_many :users, through: :members
-  has_many :messages, foreign_key: "group_id"
+  has_many :messages
 end
