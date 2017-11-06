@@ -32,7 +32,7 @@ body {
   }
 
   &__user--new-group {
-    margin-left: 160px;
+    margin-left: 120px;
     display: inline-block;
     color: $chat-side-color;
     position: relative;
@@ -166,7 +166,7 @@ body {
     width: calc( 100% - 130px );
     height: 50px;
     padding:15px 10px;
-    margin: 20px 0;
+    margin: 5px 0;
     border: none;
     @include clearfix();
     float: left;
@@ -184,8 +184,10 @@ body {
   }
 
   .image {
+    @include clearfix();
     font-family: FontAwesome;
-    display: none;
+    width: 300px;
+    float: right;
   }
 
   .fa-image {
