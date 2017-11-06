@@ -24,7 +24,7 @@
             = msg.body
             .chat-main__message-body-image
               = image_tag msg.image
-    = form_for [@group, @messages] do |f|
+    = form_for [@group, @message] do |f|
       .chat-main__footer
         .chat-main__footer-form
           .chat-main__footer-body
