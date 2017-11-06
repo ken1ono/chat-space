@@ -8,8 +8,11 @@ class MessagesController < ApplicationController
 
   def create
     @messages = Message.new(messages_params)
-    @messages.save
-    redirect_to group_messages_path
+    if @messages.save
+      redirect_to group_messages_path
+    else
+      render "index", notice: "グループを入力してください。"
+    end
   end
 
     private
