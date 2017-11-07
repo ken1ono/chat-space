@@ -60,7 +60,6 @@ gem 'pry-rails'
 gem 'rails-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'sqlite3'
 
 group :development do
   gem 'erb2haml'
