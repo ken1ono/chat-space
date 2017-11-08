@@ -11,6 +11,7 @@
 /log/*
 /tmp/*
 *.png
+*.jpg
 !/log/.keep
 !/tmp/.keep
 
