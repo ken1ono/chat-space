@@ -23,7 +23,8 @@ class MessagesController < ApplicationController
 
       def group_find
         @group = Group.find(params[:group_id])
-        @groups = current_user.groups
+        @groups = current_user.groups.includes([:messages, :users])
+        @messages = @group.messages.includes(:user)
       end
 end
 
