@@ -1,11 +1,10 @@
 FactoryBot.define do
 
   factory :message do
-    id "1"
-    body   "空です"
+    id { Faker::Number.between(1, 2) }
+    body { Faker::Lorem.sentence}
     image  { fixture_file_upload("#{::Rails.root}/spec/fixtures/image.jpg", "image/jpg")}
-    group_id    "1"
-    user_id     "1"
+    group
+    user
   end
-
 end
