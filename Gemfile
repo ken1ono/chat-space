@@ -63,6 +63,7 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rspec-rails'
+gem 'rails-controller-testing'
 
 
 group :development do

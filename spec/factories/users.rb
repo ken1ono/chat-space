@@ -1,10 +1,15 @@
 FactoryBot.define do
+  pass = Faker::Internet.password(8)
 
   factory :user do
-    id    { Faker::Number.between(1, 2) }
-    email { Faker::Internet.email}
-    password { Faker::Internet.password }
+    id                     { Faker::Number.number(2) }
+    email                 { Faker::Internet.email}
+    password              pass
+    password_confirmation pass
     name { Faker::Name.name}
-  end
 
+    after(:create) do |user|
+      create(:member, user: user, group: create(:group))
+    end
+  end
 end
