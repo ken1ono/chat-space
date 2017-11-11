@@ -29,10 +29,10 @@
         .chat-main__footer-form
           .chat-main__footer-body
             .message
-              = f.text_field :body, class: "message",placeholder: "type a message"
+              = f.text_field :body, class: "message",placeholder: "type a message", id: "message_body"
             .chat-file
-              =f.file_field :image, class: "chat-file", style: "display:none;"
+              =f.file_field :image, class: "chat-file", style: "display:none;", id: "message_image"
             .image
               =f.label :image, class: "image" do
                 %i.fa.fa-image.fa-lg
-          = f.submit :body, class: "submit",type: "submit", value: "Save", data:{ disable_with: "Save"}
+              = f.submit "Send", class: "send"
