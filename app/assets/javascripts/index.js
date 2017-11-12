@@ -11,10 +11,10 @@ $(document).on('turbolinks:load', function(){
                     </a>
                   </div>
                   `
-                  $("#user-search-result").append(html)
+      $("#user-search-result").append(html)
      }
 
-    function appendAdd(userid, name){
+    function appendAddUser(userid, name){
       var html = `<div class='chat-group-user clearfix js-chat-member' id='${userid}'>
                     <input name='group[user_ids][]' type='hidden' value='${userid}'>
                     <p class='chat-group-user__name'>
@@ -25,7 +25,7 @@ $(document).on('turbolinks:load', function(){
                     </a>
                   </div>
                   `
-                  $("#chat-group-users").append(html);
+      $("#chat-group-users").append(html);
      }
 
 
@@ -60,8 +60,7 @@ $(document).on('turbolinks:load', function(){
     $(this).parent().remove()
       var userid = $(this).data('user-id')
       var name = $(this).data('user-name')
-        appendAdd(userid, name);
-        console.log(this)
+        appendAddUser(userid, name);
     });
     $('#chat-group-users').on('click', '.user-search-remove', function(){
       $(this).parent().remove()
