@@ -3,10 +3,7 @@
   var timer;
 
   function buildHTML(message){
-    var img =  '';
-    if (message.image) {
-      img = `<img src="${message.image.url}">`;
-    }
+    var img = message.image !== null ? `<img alt="${message.image}" src="${message.image}" />` : "" ;
     var html = `<div class= "chat-main__message" data-message-id="${message.id}">
                   <p class="chat-main__message-name">
                     ${message.name}
@@ -61,6 +58,7 @@
       dataType: 'json',
     })
     .done(function(data) {
+      console.log(data)
       for(message of data){
         var html = buildHTML(message);
         $('.chat-main__body').append(html)
