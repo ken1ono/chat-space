@@ -12,18 +12,7 @@
         %i
           - @group.users.each do |user|
             = user.name
-    .chat-main__body
-      .chat-main__body--messages-list
-      - @group.messages.each do |msg|
-        .chat-main__message.clearfix{"data-id": "987"}
-          .chat-main__message-name
-            = msg.user.name
-          .chat-main__message-time
-            = msg.updated_at
-          .chat-main__message-body
-            = msg.body
-            .chat-main__message-body-image
-              = image_tag msg.image
+    = render partial: "messages/chat"
     = form_for [@group, @message] do |f|
       .chat-main__footer
         .chat-main__footer-form

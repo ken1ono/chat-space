@@ -1,23 +1,29 @@
   $(document).on('turbolinks:load', function(){
 
+  var timer;
+
   function buildHTML(message){
-    var img =  message.image !== null ? ` <img alt="${message.image}" src="${message.image}" />` : ""
-    var html = `<div class= "text">
-                  <h1>
+    var img =  '';
+    if (message.image) {
+      img = `<img src="${message.image.url}">`;
+    }
+    var html = `<div class= "chat-main__message" data-message-id="${message.id}">
+                  <p class="chat-main__message-name">
                     ${message.name}
-                  </h1>
-                  <h2>
+                  </p>
+                  <p class="chat-main__message-time">
                     ${message.created_at}
-                  </h2>
-                <div class= "message">
+                  </p>
+                <div class= "chat-main__message-body">
                   <h3>
                     ${message.body}
                   </h3>
                 </div>
                     ${img}
-                </div>`
+                </div>`;
     return html
-  }
+    }
+
   $('.new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -44,4 +50,26 @@
       $('.send').attr('disabled', false);
     })
   });
+
+  function updated() {
+    var last_message = $(".chat-main__message").last().data("message-id");
+    var url = location.pathname ;
+    $.ajax({
+      url: url,
+      type: "GET",
+      data: {"last_message_id" : last_message},
+      dataType: 'json',
+    })
+    .done(function(data) {
+      for(message of data){
+        var html = buildHTML(message);
+        $('.chat-main__body').append(html)
+      }
+    })
+  }
+  if (window.location.href.match(/\/groups\/\d{1,}\/messages/)) {
+    timer = setInterval(updated, 5000);
+  } else {
+    clearInterval(timer);
+  }
 });
