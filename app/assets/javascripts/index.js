@@ -27,8 +27,6 @@ $(document).on('turbolinks:load', function(){
                   `
       $("#chat-group-users").append(html);
      }
-
-
   $(".chat-group-form-search").on("keyup", function(e) {
     e.preventDefault();
     var input = $(".chat-group-form-search").val();
