@@ -58,7 +58,6 @@
       dataType: 'json',
     })
     .done(function(data) {
-      console.log(data)
       for(message of data){
         var html = buildHTML(message);
         $('.chat-main__body').append(html)

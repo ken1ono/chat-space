@@ -1,7 +1,7 @@
 .chat-main__body
   .chat-main__body--messages-list
   - @group.messages.each do |message|
-    .chat-main__message.clearfix{"data-message-id": "#{message.id}"}
+    .chat-main__message.clearfix{"data-message-id": message.id}
       .chat-main__message-name
         = message.user.name
       .chat-main__message-time
